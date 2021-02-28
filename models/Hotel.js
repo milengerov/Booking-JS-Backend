@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 
+
 const hotelSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -22,6 +23,10 @@ const hotelSchema = new mongoose.Schema({
         type: Number,
         min: [1, "Free rooms must be at least 1"],
         max: [100, "Free rooms can't be more than 100!"]
+    },
+    creator: {
+        type: mongoose.Types.ObjectId,
+        ref: "User"
     }
 
 });

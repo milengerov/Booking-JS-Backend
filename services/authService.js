@@ -6,9 +6,9 @@ const {SECRET} = require("../config/config");
 
 
 
-const register = (email, username, password) => {
+const register = (email, username, password, imageUrl) => {
 
-    let user = new User({email,  username, password });
+    let user = new User({email,  username, password, imageUrl });
 
     return user.save();
 

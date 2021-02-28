@@ -19,6 +19,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 5,    
     },
+    imageUrl: {
+        type: String,
+        required: true,
+        validate: [/^(https?)/, "Please, enter a valid URL!"]
+    },
     reservations: [
         {
             type: mongoose.Types.ObjectId,

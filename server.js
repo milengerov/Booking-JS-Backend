@@ -3,7 +3,7 @@ const express = require("express");
 const {PORT} = require("./config/config");
 const routes = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
-const messageHandler = require("./middlewares/messageHandler");
+// const messageHandler = require("./middlewares/messageHandler");
 
 
 const app = express();

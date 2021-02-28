@@ -12,7 +12,7 @@ router.get("/register", (req, res) => {
 router.post("/register",
     async (req, res, next) => {
 
-        const { email, username, password, repeatPassword } = req.body;
+        const { email, username, password, repeatPassword, imageUrl } = req.body;
 
         if (password != repeatPassword) {
             
@@ -21,7 +21,7 @@ router.post("/register",
         }
 
         try {
-            const user = await authService.register(email, username, password);           
+            const user = await authService.register(email, username, password, imageUrl);           
             
             res.redirect("/auth/login");
 
