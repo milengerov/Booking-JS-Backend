@@ -36,8 +36,13 @@ const login = async (username, password) => {
 
 };
 
+// function updateUser(id, data) {
+//     User.findByIdAndUpdate(id,)
+// }
+
 
 module.exports = {
     register,
     login,
+    // updateUser
 }

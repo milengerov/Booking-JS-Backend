@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>BookingUni</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             </div>
             {{#if user}}
             <div class="right-container">                
-                <a href="/auth/{{user._id}}" class="log-out">Hello, {{name}}</a>               
+                <a href="/auth/{{user._id}}" class="log-out">Hello, {{user.username}}</a>               
                 <a href="/auth/logout" class="log-out">Logout</a>                
             </div>
             {{/if}}
