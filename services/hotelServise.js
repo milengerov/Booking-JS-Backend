@@ -6,6 +6,14 @@ function create(hotelData, userId) {
 }
 
 
+function getAll(){
+    return Hotel
+    .find({})
+    .sort({freeRooms: -1})
+    .lean();
+}
+
 module.exports = {
     create,
+    getAll
 }
