@@ -31,9 +31,7 @@ router.post("/register",
 
     });
 
-
-
-
+    
 
 //login
 router.get("/login", (req, res) => {
@@ -57,7 +55,20 @@ router.post("/login", (req, res, next) => {
 router.get("/logout", (req, res) => {
     res.clearCookie(COOKIE_NAME);
     res.redirect("/");
-})
+});
+
+
+
+router.get("/profile/:id", (req, res, next) => {
+    const userId = req.params.id;
+    console.log(userId);
+
+    authService.getOne(userId)
+    .then(user => {       
+        
+        res.render("auth/profile", user)
+    })
+});
 
 
 

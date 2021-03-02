@@ -40,7 +40,7 @@
             </div>
             {{#if user}}
             <div class="right-container">                
-                <a href="/auth/{{user._id}}" class="log-out">Hello, {{user.username}}</a>               
+                <a href="/auth/profile/{{user._id}}" class="log-out">Hello, {{user.username}}</a>               
                 <a href="/auth/logout" class="log-out">Logout</a>                
             </div>
             {{/if}}
