@@ -26,7 +26,7 @@ async function getOne(hotelId, userId) {
 
     return Promise.all([hotel, user])
         .then(() => {
-            
+
             hotel.isOwn = hotel.creator == userId;
             hotel.isBooked = user.reservations.some(x => x == hotel._id.toString());
             console.log(hotel);
@@ -34,8 +34,8 @@ async function getOne(hotelId, userId) {
 
         })
 
-    
-    
+
+
 
 }
 
@@ -52,6 +52,17 @@ async function bookHotel(hotelId, userId) {
 }
 
 
+function editHotel(hotelId, hotelData) {
+    return Hotel.findByIdAndUpdate(hotelId, hotelData)
+        .then(hotel => {
+            return hotel;
+        })
+}
+
+function deleteHotel(hotelId) {
+    return Hotel.findByIdAndDelete(hotelId)
+    .then(hotel => {return hotel})
+}
 
 
 
@@ -61,5 +72,7 @@ module.exports = {
     create,
     getAll,
     getOne,
-    bookHotel
+    bookHotel,
+    editHotel,
+    deleteHotel,
 }
